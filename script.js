@@ -24,11 +24,15 @@ const resumeInput = document.getElementById('resumeInput');
 const resumeFrame = document.getElementById('resumeFrame');
 const downloadResume = document.getElementById('downloadResume');
 
-resumeInput.addEventListener('change', (e) => {
-  const file = e.target.files && e.target.files[0];
-  if (!file) return;
-  const url = URL.createObjectURL(file);
-  resumeFrame.src = url;
-  downloadResume.href = url;
-  downloadResume.download = file.name;
-});
+if (resumeInput) {
+  resumeInput.addEventListener('change', (e) => {
+    const file = e.target.files && e.target.files[0];
+    if (!file) return;
+    const url = URL.createObjectURL(file);
+    if (resumeFrame) resumeFrame.src = url;
+    if (downloadResume) {
+      downloadResume.href = url;
+      downloadResume.download = file.name;
+    }
+  });
+}
