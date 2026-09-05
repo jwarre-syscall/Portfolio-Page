@@ -1,6 +1,7 @@
 
 :root{
-  --accent:#8A2BE2; /* purple accent from repo */
+  --accent-dark:#8A2BE2; /* purple accent from repo */
+  --accent-light:#ff8a00; /* orange accent for light mode (matches resume) */
   --bg-dark:#07001B;
   --text-dark:#ffffff;
   --muted-dark:#d1d5db;
@@ -10,6 +11,8 @@
   --text-light:#111827;
   --muted-light:#6b7280;
   --card-light:#ffffff;
+  /* fallback accent; actual --accent is set by theme classes */
+  --accent: var(--accent-dark);
 }
 
 *{box-sizing:border-box}
@@ -48,6 +51,7 @@ body.theme-dark{
 body.theme-dark .job{background:var(--card-dark)}
 body.theme-dark .meta{color:var(--muted-dark)}
 body.theme-dark .site-header{border-color:rgba(255,255,255,0.04)}
+body.theme-dark{--accent:var(--accent-dark)}
 
 /* Theme: light */
 body.theme-light{
@@ -57,6 +61,7 @@ body.theme-light{
 body.theme-light .job{background:var(--card-light)}
 body.theme-light .meta{color:var(--muted-light)}
 body.theme-light .site-header{border-color:rgba(0,0,0,0.06)}
+body.theme-light{--accent:var(--accent-light)}
 
 @media (max-width:700px){
   .header-container{flex-direction:column}
