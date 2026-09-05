@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Jerome Warren — Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container header-container">
+        <h1 class="site-title"><a href="#">Jerome Warren</a></h1>
+        <nav class="main-nav" aria-label="Primary">
+          <a class="nav-link" href="#about">About</a>
+          <a class="nav-link" href="#experience">Experience</a>
+          <a class="nav-link" href="#education">Education</a>
+          <a class="nav-link" href="#projects">Projects</a>
+          <a class="nav-link" href="#skills">Skills</a>
+        </nav>
+        <div class="header-actions">
+          <button id="themeToggle" class="icon-btn" aria-label="Toggle theme">◐</button>
+          <a href="resume.pdf" id="downloadResume" class="btn" download>Download Resume</a>
+          <label class="btn upload-btn">Upload Resume<input id="resumeInput" type="file" accept="application/pdf" hidden></label>
+          <a href="https://github.com/jwarre-syscall" target="_blank" rel="noopener" class="icon-link" title="GitHub">
+            <img src="assets/github.svg" alt="GitHub"/>
+          </a>
+          <a href="https://linkedin.com/in/yourname" target="_blank" rel="noopener" class="icon-link" title="LinkedIn">
+            <img src="assets/linkedin.svg" alt="LinkedIn"/>
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <main class="container">
+      <section id="about">
+        <h2>About</h2>
+        <p>Hi, I'm Jerome — a computer science student focused on game programming and software engineering. This single-page portfolio adapts the centered dark style from your existing site.</p>
+      </section>
+
+      <section id="experience">
+        <h2>Experience</h2>
+        <div class="experience-list">
+          <article class="job">
+            <h3>Software Engineering Student — Kent State University</h3>
+            <p class="meta">Aug 2023 — Present • Kent, OH</p>
+            <p>Team projects, weekly deliveries, and collaborative game-engine work. Replace with your detailed bullet list.</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="education">
+        <h2>Education</h2>
+        <p>Kent State University — B.S. Computer Science (Game Programming concentration)</p>
+      </section>
+
+      <section id="projects">
+        <h2>Projects</h2>
+        <p>Short list of projects — link to GitHub repos or provide screenshots.</p>
+      </section>
+
+      <section id="skills">
+        <h2>Skills</h2>
+        <p>Proficient in C++; familiar with Java, JavaScript, Lua.</p>
+      </section>
+
+      <section id="resume">
+        <h2>Resume</h2>
+        <p>You can upload a PDF to preview it below, or replace <code>resume.pdf</code> with your file.</p>
+        <div class="resume-wrapper">
+          <iframe id="resumeFrame" src="resume.pdf" title="Resume preview"></iframe>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">© <span id="year"></span> Jerome Warren</div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>

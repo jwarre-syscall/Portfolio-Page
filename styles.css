@@ -1,0 +1,66 @@
+
+:root{
+  --accent:#8A2BE2; /* purple accent from repo */
+  --bg-dark:#07001B;
+  --text-dark:#ffffff;
+  --muted-dark:#d1d5db;
+  --card-dark:#0f1020;
+
+  --bg-light:#f7f7fb;
+  --text-light:#111827;
+  --muted-light:#6b7280;
+  --card-light:#ffffff;
+}
+
+*{box-sizing:border-box}
+body{font-family:Inter,Segoe UI,Helvetica,Arial,sans-serif;margin:0;-webkit-font-smoothing:antialiased}
+.container{max-width:900px;margin:0 auto;padding:24px}
+
+/* Header */
+.site-header{border-bottom:1px solid rgba(255,255,255,0.04)}
+.header-container{display:flex;align-items:center;justify-content:center;gap:20px;flex-wrap:wrap}
+.site-title{margin:0;font-size:1.4rem}
+.site-title a{color:inherit;text-decoration:none}
+.main-nav{display:flex;gap:18px}
+.nav-link{color:inherit;text-decoration:none;font-size:1rem;transition:0.2s}
+.nav-link:hover{color:var(--accent)}
+.header-actions{display:flex;gap:8px;align-items:center}
+.icon-link img{width:22px;height:22px;display:block}
+.icon-btn{background:transparent;border:1px solid transparent;color:inherit;padding:6px 8px;border-radius:6px;cursor:pointer}
+.btn{background:var(--accent);color:#fff;padding:8px 12px;border-radius:6px;text-decoration:none;font-size:0.9rem}
+.upload-btn{cursor:pointer}
+
+main{padding:32px 16px}
+section{margin-bottom:28px;text-align:center}
+h2{margin-top:0}
+.experience-list{display:grid;gap:12px}
+.job{background:var(--card);padding:14px;border-radius:8px;box-shadow:0 1px 2px rgba(16,24,40,0.04);max-width:780px;margin:0 auto;text-align:left}
+.meta{color:var(--muted);font-size:0.95rem;margin:6px 0}
+.resume-wrapper{height:600px;border-radius:8px;overflow:hidden;max-width:900px;margin:0 auto;border:1px solid rgba(255,255,255,0.06)}
+iframe{width:100%;height:100%;border:0}
+.site-footer{padding:16px 0;text-align:center}
+
+/* Theme: dark by default */
+body.theme-dark{
+  background:var(--bg-dark);
+  color:var(--text-dark);
+}
+body.theme-dark .job{background:var(--card-dark)}
+body.theme-dark .meta{color:var(--muted-dark)}
+body.theme-dark .site-header{border-color:rgba(255,255,255,0.04)}
+
+/* Theme: light */
+body.theme-light{
+  background:var(--bg-light);
+  color:var(--text-light);
+}
+body.theme-light .job{background:var(--card-light)}
+body.theme-light .meta{color:var(--muted-light)}
+body.theme-light .site-header{border-color:rgba(0,0,0,0.06)}
+
+@media (max-width:700px){
+  .header-container{flex-direction:column}
+  .main-nav{flex-wrap:wrap;justify-content:center}
+  .job{width:100%}
+}
+
