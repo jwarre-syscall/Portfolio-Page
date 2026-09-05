@@ -1,38 +1,25 @@
 # Single Page Portfolio
 
-This is a minimal single-page portfolio scaffold adapted to match the style from the `jwarre-syscall/Personal-Website` repo: centered layout, dark theme, and purple accent.
+This single-page portfolio was created by combining content from a parsed resume and the `jwarre-syscall/Personal-Website` layout and styles. It uses a lightweight static stack (HTML/CSS/JS) and a persistent theme toggle.
 
-Files added/updated:
-- `index.html` — main single-page site with centered nav and theme toggle
-- `styles.css` — dark + light theme variables and responsive layout
-- `script.js` — theme toggle persistence and resume upload-preview
-- `assets/` — SVG icons for GitHub and LinkedIn
-- `resume.pdf`
+What changed (summary):
+- Populated `index.html` sections (About, Experience, Education, Projects, Skills) with extracted resume content and adapted copy from the Personal-Website pages.
+- Added and standardized boxed section styling via `.section-box` so headers and paragraphs share the same visual container.
+- Implemented light/dark themes using CSS custom properties; added a prominent `#themeToggle` that persists selection in `localStorage`.
+- Harmonized experience entries into `.job` cards matching section paragraph styling.
+- Included `assets/` with GitHub and LinkedIn icons and an embedded `resume.pdf` (preview/iframe).
+- Added a GitHub Actions workflow to publish to `gh-pages`
 
-Theme:
-- The site defaults to the dark theme resembling my existing repo. Use the theme toggle in the header to switch to light mode;
+Files of note:
+- `index.html` — single page with boxed sections and social links
+- `styles.css` — theme tokens, `.section-box`, and layout rules
+- `script.js` — theme toggle persistence and small helpers
+- `assets/` — icons and other static assets
+- `resume.pdf` — canonical resume file used as source content
 
-Light mode uses an orange accent to match the colors in the resume.
+Theme notes:
+- Default: dark theme inspired by the Personal-Website design (centered headings, purple accent).
+- Light mode: cream background with orange accent; toggle persists via `localStorage`.
 
-Deployment (GitHub Pages)
--------------------------
-
-This repo includes a GitHub Actions workflow that publishes the site to the `gh-pages` branch when you push to `main` (or `master`). To publish:
-
-1. Create a GitHub repository and set the remote:
-
-```bash
-git init
-git add .
-git commit -m "Initial commit"
-git branch -M main
-git remote add origin https://jwarre-syscall.github.io/Portfolio-Page/
-git push -u origin main
-```
-
-2. The workflow will run and deploy the site to the `gh-pages` branch:
-
-```
-https://jwarre-syscall.github.io/Portfolio-Page/
-```
-
+Deployment note:
+- A GitHub Actions workflow is included and configured to deploy the site to `gh-pages`.
