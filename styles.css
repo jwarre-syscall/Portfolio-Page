@@ -10,7 +10,8 @@
   --bg-light:#f7f7fb;
   --text-light:#111827;
   --muted-light:#6b7280;
-  --card-light:#ffffff;
+  --card-light:#fffaf5;
+  --bg-light:#fff7eb; /* cream background for light mode */
   /* fallback accent; actual --accent is set by theme classes */
   --accent: var(--accent-dark);
 }
@@ -52,6 +53,8 @@ body.theme-dark .job{background:var(--card-dark)}
 body.theme-dark .meta{color:var(--muted-dark)}
 body.theme-dark .site-header{border-color:rgba(255,255,255,0.04)}
 body.theme-dark{--accent:var(--accent-dark)}
+/* header box and icon box variables for dark */
+body.theme-dark{--header-box:rgba(255,255,255,0.04);--icon-box:rgba(255,255,255,0.03)}
 
 /* Theme: light */
 body.theme-light{
@@ -62,6 +65,19 @@ body.theme-light .job{background:var(--card-light)}
 body.theme-light .meta{color:var(--muted-light)}
 body.theme-light .site-header{border-color:rgba(0,0,0,0.06)}
 body.theme-light{--accent:var(--accent-light)}
+/* header box and icon box variables for light */
+body.theme-light{--header-box:rgba(0,0,0,0.06);--icon-box:rgba(0,0,0,0.08)}
+
+/* Section headers get a boxed background similar to the experience card */
+section h2{display:inline-block;padding:10px 16px;border-radius:10px;margin-bottom:16px;background:var(--header-box)}
+
+/* Icon links get subtle boxes that invert between themes */
+.icon-link{display:inline-flex;align-items:center;justify-content:center;padding:6px;border-radius:8px;border:1px solid transparent;margin-left:4px}
+body.theme-dark .icon-link{background:var(--icon-box);}
+body.theme-light .icon-link{background:var(--icon-box);}
+
+/* Slightly soften light-mode card and page backgrounds */
+body.theme-light{background:var(--bg-light)}
 
 @media (max-width:700px){
   .header-container{flex-direction:column}
