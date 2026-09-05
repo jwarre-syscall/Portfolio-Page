@@ -71,14 +71,16 @@ body.theme-light{--header-box:rgba(0,0,0,0.06);--icon-box:rgba(0,0,0,0.08)}
 /* Section headers get a boxed background similar to the experience card */
 /* remove header inline box; use section-box to wrap header + content */
 .section-box{
-  background:var(--header-box);
-  padding:16px;
+  /* container spacing only — individual header and paragraphs get the header-box background */
+  background:transparent;
+  padding:8px 0 0 0;
   border-radius:10px;
   max-width:880px;
   margin:0 auto 16px;
   text-align:left;
 }
-.section-box h2{margin:0 0 8px}
+.section-box h2{margin:0 0 8px; display:inline-block; padding:10px 16px; border-radius:10px; background:var(--header-box)}
+.section-box p{background:var(--header-box); padding:12px 16px; border-radius:10px; margin:0 0 12px}
 
 /* Icon links get subtle boxes that invert between themes */
 .icon-link{display:inline-flex;align-items:center;justify-content:center;padding:6px;border-radius:8px;border:1px solid transparent;margin-left:4px}
@@ -89,7 +91,6 @@ body.theme-light .icon-link{background:var(--icon-box);}
 body.theme-light{background:var(--bg-light)}
 
 /* paragraphs inside section-box use normal flow (box already contains padding) */
-.section-box p { margin:0 0 12px }
 .job p { margin:0 0 12px }
 
 @media (max-width:700px){
