@@ -1,0 +1,101 @@
+
+:root{
+  --accent-dark:#8A2BE2; /* purple accent from repo */
+  --accent-light:#ff8a00; /* orange accent for light mode (matches resume) */
+  --bg-dark:#07001B;
+  --text-dark:#ffffff;
+  --muted-dark:#d1d5db;
+  --card-dark:#0f1020;
+
+  --bg-light:#f7f7fb;
+  --text-light:#111827;
+  --muted-light:#6b7280;
+  --card-light:#fffaf5;
+  --bg-light:#fff7eb; /* cream background for light mode */
+  /* fallback accent; actual --accent is set by theme classes */
+  --accent: var(--accent-dark);
+}
+
+*{box-sizing:border-box}
+body{font-family:Inter,Segoe UI,Helvetica,Arial,sans-serif;margin:0;-webkit-font-smoothing:antialiased}
+.container{max-width:900px;margin:0 auto;padding:24px}
+
+/* Header */
+.site-header{border-bottom:1px solid rgba(255,255,255,0.04)}
+.header-container{display:flex;align-items:center;justify-content:center;gap:20px;flex-wrap:wrap}
+.site-title{margin:0;font-size:1.4rem}
+.site-title a{color:inherit;text-decoration:none}
+.main-nav{display:flex;gap:18px}
+.nav-link{color:inherit;text-decoration:none;font-size:1rem;transition:0.2s}
+.nav-link:hover{color:var(--accent)}
+.header-actions{display:flex;gap:8px;align-items:center}
+.icon-link img{width:22px;height:22px;display:block}
+.icon-btn{background:transparent;border:1px solid transparent;color:inherit;padding:6px 8px;border-radius:6px;cursor:pointer}
+.btn{background:var(--accent);color:#fff;padding:8px 12px;border-radius:6px;text-decoration:none;font-size:0.9rem}
+.upload-btn{cursor:pointer}
+
+main{padding:32px 16px}
+section{margin-bottom:28px;text-align:center}
+h2{margin-top:0}
+.experience-list{display:grid;gap:12px}
+.job{background:var(--card);padding:14px;border-radius:8px;box-shadow:0 1px 2px rgba(16,24,40,0.04);max-width:780px;margin:0 auto;text-align:left}
+.meta{color:var(--muted);font-size:0.95rem;margin:6px 0}
+.resume-wrapper{height:600px;border-radius:8px;overflow:hidden;max-width:900px;margin:0 auto;border:1px solid rgba(255,255,255,0.06)}
+iframe{width:100%;height:100%;border:0}
+.site-footer{padding:16px 0;text-align:center}
+
+/* Theme: dark by default */
+body.theme-dark{
+  background:var(--bg-dark);
+  color:var(--text-dark);
+}
+body.theme-dark .job{background:var(--card-dark)}
+body.theme-dark .meta{color:var(--muted-dark)}
+body.theme-dark .site-header{border-color:rgba(255,255,255,0.04)}
+body.theme-dark{--accent:var(--accent-dark)}
+/* header box and icon box variables for dark */
+body.theme-dark{--header-box:rgba(255,255,255,0.06);--icon-box:rgba(255,255,255,0.04)}
+
+/* Theme: light */
+body.theme-light{
+  background:var(--bg-light);
+  color:var(--text-light);
+}
+body.theme-light .job{background:var(--card-light)}
+body.theme-light .meta{color:var(--muted-light)}
+body.theme-light .site-header{border-color:rgba(0,0,0,0.06)}
+body.theme-light{--accent:var(--accent-light)}
+/* header box and icon box variables for light */
+body.theme-light{--header-box:rgba(0,0,0,0.06);--icon-box:rgba(0,0,0,0.08)}
+
+/* Section headers get a boxed background similar to the experience card */
+/* remove header inline box; use section-box to wrap header + content */
+.section-box{
+  /* container spacing only — individual header and paragraphs get the header-box background */
+  background:transparent;
+  padding:8px 0 0 0;
+  border-radius:10px;
+  max-width:880px;
+  margin:0 auto 16px;
+  text-align:left;
+}
+.section-box h2{margin:0 0 8px; display:inline-block; padding:10px 16px; border-radius:10px; background:var(--header-box)}
+.section-box p{background:var(--header-box); padding:12px 16px; border-radius:10px; margin:0 0 12px}
+
+/* Icon links get subtle boxes that invert between themes */
+.icon-link{display:inline-flex;align-items:center;justify-content:center;padding:6px;border-radius:8px;border:1px solid transparent;margin-left:4px}
+body.theme-dark .icon-link{background:var(--icon-box);}
+body.theme-light .icon-link{background:var(--icon-box);}
+
+/* Slightly soften light-mode card and page backgrounds */
+body.theme-light{background:var(--bg-light)}
+
+/* paragraphs inside section-box use normal flow (box already contains padding) */
+.job p { margin:0 0 12px }
+
+@media (max-width:700px){
+  .header-container{flex-direction:column}
+  .main-nav{flex-wrap:wrap;justify-content:center}
+  .job{width:100%}
+}
+
